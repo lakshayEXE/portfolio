@@ -88,7 +88,8 @@ const globalStyles = `
   .navbar.scrolled{box-shadow:0 6px 40px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.85) inset;}
   [data-theme="dark"] .navbar.scrolled{box-shadow:0 6px 40px rgba(0,0,0,0.55),0 1px 0 rgba(255,255,255,0.04) inset;}
 
-  .logo{font-family:var(--serif);font-size:1.15rem;font-style:italic;letter-spacing:-0.01em;color:var(--ink);white-space:nowrap;flex-shrink:0;transition:opacity 0.2s;}
+  .logo{display:flex;align-items:center;gap:0.6rem;font-family:var(--serif);font-size:1.15rem;font-style:italic;letter-spacing:-0.01em;color:var(--ink);white-space:nowrap;flex-shrink:0;transition:opacity 0.2s;}
+  .logo img{width:24px;height:24px;border-radius:4px;}
   .logo:hover{opacity:0.6;}
   .logo em{color:var(--green-mid);font-style:normal;}
 
@@ -404,7 +405,10 @@ const Navbar = ({ isDark, toggleTheme }) => {
     <>
       <div className="nav-wrapper">
         <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
-          <a href="#" className="logo">Lakshay<em>.</em></a>
+          <a href="#" className="logo">
+            <img src="/favicon.png" alt="Logo" />
+            Lakshay<em>.</em>
+          </a>
           <div className="nav-links" ref={linksRef}>
             <div className="nav-highlight" ref={highlightRef} />
             {sections.map(id => (
