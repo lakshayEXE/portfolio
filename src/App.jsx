@@ -254,19 +254,20 @@ const globalStyles = `
   .edu-year{font-family:var(--serif);font-size:2rem;color:var(--green-mid);font-weight:400;letter-spacing:-0.02em;line-height:1;margin-bottom:0.4rem;}
   .edu-status{font-family:var(--mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-3);}
 
-  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;}
-  .cert-card{background:var(--bg-card);border:1px solid var(--rule);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:0.5rem;transition:border-color 0.25s,transform 0.3s var(--ease),box-shadow 0.3s;cursor:default;}
-  .cert-card:hover{border-color:var(--green-mid);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08);}
-  .cert-icon{font-size:1.4rem;margin-bottom:0.25rem;}
-  .cert-title{font-size:0.95rem;font-weight:600;line-height:1.35;}
-  .cert-issuer{font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-mid);}
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
+  .cert-card{background:var(--bg-card);border:1px solid var(--rule);border-radius:12px;padding:2rem;display:flex;flex-direction:column;gap:1.25rem;transition:border-color 0.25s,transform 0.3s var(--ease),box-shadow 0.3s;cursor:default;min-height:180px;}
+  .cert-card:hover{border-color:var(--green-mid);transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,0.12);}
+  .cert-icon svg, .ach-icon svg { width: 100%; height: 100%; stroke: var(--green-mid); transition: transform 0.3s; }
+  .cert-card:hover .cert-icon svg, .ach-card:hover .ach-icon svg { transform: scale(1.1); }
+  .cert-title{font-size:1.05rem;font-weight:600;line-height:1.4;color:var(--ink-1);}
+  .cert-issuer{font-family:var(--mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green-mid);margin-top:auto;}
 
   .achievements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;}
-  .ach-card{background:var(--bg-card);border:1px solid var(--rule);border-radius:10px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.25s,transform 0.3s var(--ease),box-shadow 0.3s;cursor:default;}
-  .ach-card:hover{border-color:var(--green-mid);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.07);}
-  .ach-icon{font-size:1.5rem;flex-shrink:0;}
-  .ach-title{font-size:0.95rem;font-weight:600;line-height:1.3;margin-bottom:0.3rem;}
-  .ach-desc{font-size:0.82rem;color:var(--ink-2);font-weight:300;line-height:1.55;}
+  .ach-card{background:var(--bg-card);border:1px solid var(--rule);border-radius:12px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:border-color 0.25s,transform 0.3s var(--ease),box-shadow 0.3s;cursor:default;}
+  .ach-card:hover{border-color:var(--green-mid);transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,0.1);}
+  .ach-icon{flex-shrink:0;display:flex;align-items:center;width:52px;height:52px;}
+  .ach-title{font-size:1rem;font-weight:600;line-height:1.3;margin-bottom:0.4rem;color:var(--ink-1);}
+  .ach-desc{font-size:0.85rem;color:var(--ink-2);font-weight:300;line-height:1.6;}
 
   .footer{border-top:1px solid var(--rule);padding:8rem 2rem 5rem;text-align:center;position:relative;overflow:hidden;}
   .footer-bg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse at bottom,var(--green-glow),transparent 70%);pointer-events:none;filter:blur(40px);}
@@ -274,11 +275,16 @@ const globalStyles = `
   .footer-label{font-family:var(--mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink-3);margin-bottom:1.5rem;display:block;}
   .footer h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;max-width:600px;margin:0 auto 2.5rem;}
   .footer h2 em{font-style:italic;color:var(--green-mid);}
+  .email-container{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:2.5rem;}
   .email-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:clamp(1rem,2vw,1.2rem);font-weight:600;color:var(--ink);background:var(--bg-card);border:1px solid var(--rule);padding:1rem 2rem;border-radius:100px;transition:background 0.25s,border-color 0.25s,transform 0.3s var(--ease),color 0.25s,box-shadow 0.25s;}
   .email-btn:hover{background:var(--green);border-color:var(--green);color:#fff;transform:translateY(-4px);box-shadow:0 16px 40px rgba(45,106,79,0.3);}
-  .socials{margin-top:3.5rem;display:flex;justify-content:center;gap:0.25rem;}
-  .social-link{font-size:0.85rem;font-weight:500;color:var(--ink-3);padding:0.4rem 0.9rem;border-radius:100px;position:relative;transition:color 0.2s,background 0.2s;}
-  .social-link:hover{color:var(--ink);background:var(--bg-2);}
+  .copy-btn{font-family:var(--mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;background:var(--bg-2);border:1px solid var(--rule);padding:0.6rem 1.2rem;border-radius:100px;cursor:pointer;transition:all 0.25s;color:var(--ink-3);font-weight:600;}
+  .copy-btn:hover{background:var(--green-light);border-color:var(--green-mid);color:var(--green-mid);transform:translateY(-2px);}
+  .socials{margin-top:3.5rem;display:flex;justify-content:center;gap:1rem;}
+  .social-link{display:flex;align-items:center;gap:0.55rem;font-size:0.85rem;font-weight:500;color:var(--ink-3);padding:0.5rem 1rem;border-radius:100px;border:1px solid var(--rule);transition:all 0.2s;}
+  .social-link svg{width:18px;height:18px;transition:transform 0.2s;}
+  .social-link:hover{color:var(--ink);background:var(--bg-card);border-color:var(--green-mid);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.05);}
+  .social-link:hover svg{transform:scale(1.1);}
   .footer-copy{margin-top:4rem;font-family:var(--mono);font-size:0.7rem;color:var(--ink-3);letter-spacing:0.08em;padding-top:2rem;border-top:1px solid var(--rule);}
 
   main{padding-top:0;}
@@ -482,7 +488,7 @@ const useTypewriter = (words, { typingSpeed = 80, deletingSpeed = 45, pauseMs = 
   return display;
 };
 
-const ROLES = ['Full Stack Developer', 'Angular Engineer', 'Node.js Builder', 'API Architect'];
+const ROLES = ['Engineer', 'Software Engineer', 'Full Stack Engineer'];
 
 const HeroSection = () => {
   const role = useTypewriter(ROLES);
@@ -502,7 +508,7 @@ const HeroSection = () => {
             <span className="hero-role-text">{role}<span className="cursor" /></span>
           </div>
           <p className="hero-sub reveal active" style={{ transitionDelay: '0.22s' }}>
-            Building production-grade Angular &amp; Node.js apps at Bridging Healthcare.
+            Building production-grade Angular &amp; Node.js apps.
           </p>
           <div className="hero-cta reveal active" style={{ transitionDelay: '0.28s' }}>
             <a href="#contact" className="btn-fill">
@@ -521,9 +527,9 @@ const HeroSection = () => {
           <div className="hero-card-rows">
             {[
               { label: 'Location', val: 'Mohali, Punjab, IN' },
-              { label: 'Company', val: 'Bridging Healthcare' },
+              { label: 'Company', val: 'Bridging Technology' },
               { label: 'Stack', val: 'Angular · Node · SQL' },
-              { label: 'LeetCode', val: '400+ problems' },
+              { label: 'LeetCode', val: '500+ problems' },
               { label: 'Status', val: null, dot: true },
             ].map((r, i) => (
               <div className="hero-card-row" key={i}>
@@ -551,7 +557,7 @@ const StatsBar = () => (
   <div className="stats-bar">
     <div className="stats-inner">
       {[
-        { num: '400', suffix: '+', label: 'Problems Solved', platform: 'Coding Platforms' },
+        { num: '500', suffix: '+', label: 'Problems Solved', platform: 'Coding Platforms' },
         { num: '15', suffix: 'th', label: 'Young Turks 2024', platform: 'Naukri Campus · 510K participants' },
         { num: '5', suffix: '+', label: 'Features Shipped', platform: 'Production · Fintech' },
         { num: '2', suffix: '🏆', label: 'Hackathon Wins', platform: 'KRMU & CTF Aravali' },
@@ -658,21 +664,28 @@ const ProjectsSection = () => {
       title: 'Connect Now',
       description: 'Real-time one-to-one video chat app built with WebRTC and Socket.io. Features secure JWT authentication, dynamic user dashboards, and live signalling for peer connections.',
       tags: ['React', 'Node.js', 'WebRTC', 'Socket.io', 'MongoDB', 'JWT'],
-      demo: '#', source: '#',
+      demo: 'https://connect-now-n3jl.vercel.app/', source: 'https://github.com/lakshayEXE/ConnectNow',
     },
     {
       num: '02',
       title: 'Live Polling System',
       description: 'Time-based real-time polling tool for educators and students with live result tracking and analytics. Optimized to handle 100+ concurrent users with real-time data sync.',
       tags: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
-      demo: '#', source: '#',
+      demo: 'https://livepollingsystemlakshay.netlify.app/', source: 'https://github.com/lakshayEXE/live-polling-system',
     },
     {
       num: '03',
       title: 'ChatSphere',
       description: 'Full-stack Angular chat application with reactive forms, JWT authentication, WebSocket messaging, online presence indicators, and secure file uploads with live preview.',
       tags: ['Angular', 'Node.js', 'WebSocket', 'SQL', 'JWT', 'Multer'],
-      demo: '#', source: '#',
+      source: 'https://github.com/lakshayEXE/full_stack_connection',
+    },
+    {
+      num: '04',
+      title: 'CodeFussion',
+      description: 'Scrapped data from my coding profile Leetcode, GeeksforGeeks , Codechef and displayed it in a dashboard.',
+      tags: ['Node.js', 'Puppeteer', 'Express', 'WebScrapping'],
+      source: 'https://github.com/lakshayEXE/CodeFussion',
     },
   ];
   return (
@@ -694,10 +707,12 @@ const ProjectsSection = () => {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
                   Source
                 </a>
-                <a href={p.demo} className="project-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                  Live Demo
-                </a>
+                {p.demo && (
+                  <a href={p.demo} className="project-link" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                    Live Demo
+                  </a>
+                )}
               </div>
             </SpotlightCard>
           ))}
@@ -719,8 +734,8 @@ const SkillsSection = () => {
         <div className="skills-grid">
           {[
             { label: 'Frontend', skills: ['Angular', 'React.js', 'TypeScript', 'JavaScript ES6+', 'HTML5 & CSS3', 'Bootstrap', 'Tailwind CSS', 'D3.js'] },
-            { label: 'Backend', skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'WebSocket', 'Socket.io', 'WebRTC', 'Puppeteer'] },
-            { label: 'Databases & Tools', skills: ['SQL', 'MongoDB', 'XAMPP', 'Postman', 'Git', 'GitHub'] },
+            { label: 'Backend', skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'WebSocket', 'Socket.io', 'WebRTC', 'Puppeteer', 'Stripe SDK', 'AWS'] },
+            { label: 'Databases & Tools', skills: ['SQL', 'MongoDB', 'XAMPP', 'Postman', 'Git', 'GitHub', 'Jenkins'] },
             { label: 'Languages', skills: ['JavaScript', 'TypeScript', 'C++', 'SQL'] },
           ].map((g, i) => (
             <div className="skill-group" key={i}>
@@ -735,7 +750,7 @@ const SkillsSection = () => {
               Passionate about data structures, algorithms, and systems. Strong foundation in DSA, DBMS, OS, and OOP. Ranked 15th out of 510,000 participants in Naukri Campus Young Turks 2024.
             </p>
             <div className="cp-stats-row">
-              <div className="cp-stat"><div className="cp-stat-num">400+</div><div className="cp-stat-label">Problems across platforms</div></div>
+              <div className="cp-stat"><div className="cp-stat-num">500+</div><div className="cp-stat-label">Problems across platforms</div></div>
               <div className="cp-stat"><div className="cp-stat-num">15th</div><div className="cp-stat-label">Young Turks 2024 (coding)</div></div>
             </div>
           </div>
@@ -748,19 +763,107 @@ const SkillsSection = () => {
 const EducationSection = () => {
   const ref = useScrollReveal();
   const certs = [
-    { icon: '🧱', title: 'Full Stack Web Development', issuer: '100xDevs · Harkirat Singh' },
-    { icon: '⚛️', title: 'React.js — Complete Guide', issuer: 'Udemy' },
-    { icon: '🟢', title: 'Node.js — The Complete Course', issuer: 'Udemy' },
-    { icon: '🔷', title: 'TypeScript — Deep Dive', issuer: 'Udemy' },
-    { icon: '🅰️', title: 'Angular — Full Course', issuer: 'Udemy' },
-    { icon: '⚡', title: 'C++ for Competitive Programming', issuer: 'Self-paced' },
-    { icon: '🗂️', title: 'Data Structures & Algorithms', issuer: 'Self-paced' },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><circle cx="12" cy="12" r="3" /><path d="m9 12 2 2 4-4" />
+        </svg>
+      ),
+      title: 'Full Stack Web Development',
+      issuer: '100xDevs · Harkirat Singh'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="2" /><path d="M12 12m-9-4q9-4 18 0" /><path d="M12 12m-9 4q9 4 18 0" /><path d="M12 12m-4-9q4 9 0 18" /><path d="M12 12m4-9q-4 9 0 18" />
+        </svg>
+      ),
+      title: 'React.js — Complete Guide',
+      issuer: 'Self-paced'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" /><path d="m9 12 3 3 3-3" />
+        </svg>
+      ),
+      title: 'Node.js — The Complete Course',
+      issuer: 'Self-paced'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 12h-4v4m0-4 4 4" /><path d="M4 8h8" /><path d="M8 8v8" />
+        </svg>
+      ),
+      title: 'TypeScript — Deep Dive',
+      issuer: 'Self-paced'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2 2 5l2 14 8 3 8-3 2-14-10-3z" /><path d="m9 15 3-8 3 8" /><path d="M10 13h4" />
+        </svg>
+      ),
+      title: 'Angular — Full Course',
+      issuer: 'Self-paced'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2v20" /><path d="m16 8 4 4-4 4" /><path d="m8 8-4 4 4 4" />
+        </svg>
+      ),
+      title: 'C++ for Competitive Programming',
+      issuer: 'Self-paced'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" />
+        </svg>
+      ),
+      title: 'Data Structures & Algorithms',
+      issuer: 'Self-paced'
+    },
   ];
   const achievements = [
-    { icon: '🏅', title: 'Naukri Young Turks 2024', desc: 'Ranked 15th out of 510,000 participants in the coding domain competition.' },
-    { icon: '🏆', title: 'KRMU Hackathon 2023 — 1st Place', desc: 'Secured 1st position (category-wise) with an innovative full-stack web application.' },
-    { icon: '🥈', title: 'CTF Aravali College 2023 — 2nd Place', desc: 'Secured 2nd position in Capture The Flag, demonstrating cybersecurity skills.' },
-    { icon: '💻', title: '400+ Problems Solved', desc: 'Consistent competitive programmer across LeetCode and GeeksforGeeks.' },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+        </svg>
+      ),
+      title: 'Naukri Young Turks 2024',
+      desc: 'Ranked 15th out of 510,000 participants in the coding domain competition.'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
+        </svg>
+      ),
+      title: 'KRMU Hackathon 2023 — 1st Place',
+      desc: 'Secured 1st position (category-wise) with an innovative full-stack web application.'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="12 22 12 13 20 9.5" />
+        </svg>
+      ),
+      title: 'CTF Aravali College 2023 — 2nd Place',
+      desc: 'Secured 2nd position in Capture The Flag, demonstrating cybersecurity skills.'
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+        </svg>
+      ),
+      title: '500+ Problems Solved',
+      desc: 'Consistent competitive programmer across LeetCode and GeeksforGeeks.'
+    },
   ];
   return (
     <section id="education" className="section reveal" ref={ref}>
@@ -828,23 +931,86 @@ const EducationSection = () => {
   );
 };
 
+const SOCIAL_LINKS = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/lakshayEXE',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+      </svg>
+    )
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/lakshaybhatia2506',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    )
+  },
+  {
+    name: 'LeetCode',
+    url: 'https://leetcode.com/u/lakshay_bhatia/',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5l-4.5-4.5 1.41-1.41L11 14.67l6.59-6.59 1.41 1.41L11 17.5z" />
+      </svg>
+    )
+  }
+];
+
 const ContactSection = () => {
   const ref = useScrollReveal();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText('lakshaybhatia0426@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <footer id="contact" className="footer reveal" ref={ref}>
       <div className="footer-bg" />
       <div className="footer-inner container">
         <span className="footer-label">Contact</span>
         <h2>Let's build something <em>great together.</em></h2>
-        <a href="mailto:lakshaybhatia0426@gmail.com" className="email-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-          lakshaybhatia0426@gmail.com
-        </a>
-        <div className="socials">
-          <a href="https://github.com/lakshayEXE" className="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/lakshaybhatia2506" className="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+        <div className="email-container">
+          <a href="mailto:lakshaybhatia0426@gmail.com" className="email-btn">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            lakshaybhatia0426@gmail.com
+          </a>
+          <button onClick={handleCopyEmail} className="copy-btn" aria-label="Copy email address">
+            {copied ? 'Copied!' : 'Copy'}
+          </button>
         </div>
-        <p className="footer-copy">© 2025 Lakshay Bhatia — Designed &amp; built with care.</p>
+
+        <div className="socials">
+          {SOCIAL_LINKS.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit my ${social.name} profile`}
+            >
+              {social.icon}
+              <span>{social.name}</span>
+            </a>
+          ))}
+        </div>
+
+        <p className="footer-copy">© {new Date().getFullYear()} Lakshay Bhatia — Designed &amp; built with care.</p>
       </div>
     </footer>
   );
